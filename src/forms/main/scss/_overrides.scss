@@ -1,0 +1,104 @@
+//** Load fonts from this directory.
+$icon-font-path: "/vendors/fonts/";
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$brand-primary:          #4682B4;
+
+$font-size-base: 12px;
+
+// Basics of a navbar
+$navbar-height: 30px;
+
+$navbar-default-color: $gray-lighter;
+$navbar-default-bg: $brand-primary;
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 10px;
+
+$border-radius-base: 1px;
+$border-radius-large: 1px;
+$border-radius-small: 1px;
+
+//** `<input>` background color
+$input-bg: #fff;
+//** `<input disabled>` background color
+$input-bg-disabled: $gray-lighter;
+
+//** Text color for `<input>`s
+$input-color: $gray-darker;
+//** `<input>` border color
+$input-border: $gray;
+
+$form-group-margin-bottom: 5px;
+
+$screen-md: 992px !default;
+$screen-lg: 1350px !default;
+
+.form-group{
+  label{
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    padding-top: 3px !important;
+  }
+  input{
+    padding: 5px 5px !important;
+  }
+
+}
+// .form-control{
+//   box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5) !important;
+// }
+hr{
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.h4{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+@media (min-width: $screen-md){
+  .form-group{
+    input[type="text"], input[type="date"]{
+      width: 120px;
+      display: inline-block !important;
+    }
+    .col-sm-3{
+      text-align: right;
+      vertical-align: bottom;
+    }
+    input[type="checkbox"]{
+      display: inline-block !important;
+    }
+  }
+}
+@media (min-width: $screen-lg){
+  .form-group{
+    input[type="text"],input[type="date"]{
+      width: 150px !important;
+    }
+  }
+}
+
+// Native form overrides
+input[type="text"], input[type="date"]{
+  border: 2px inset !important;
+  @include box-shadow(inset 2px 1px rgba(0,0,0,0.075));
+  @include transition(none !important);
+  &:focus{
+    @include box-shadow(inset 2px 1px);
+  }
+}
+
+.btn{
+  border: 1px outset rgb(221,221,211) !important;
+  background-color: rgb(221,221,211) !important;
+  &:hover, &:active, &:focus{
+    // background-color: rgba(221,221,211);
+  }
+}

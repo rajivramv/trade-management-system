@@ -1,0 +1,179 @@
+<form class="form-horizontal" role="form" name="searchOrdersForm">
+
+  <div class="form-group">
+    <div class="col-xs-12">
+      <p class="h4">Search Orders</p>
+    </div>
+
+    <div class="col-sm-3">
+    <label for="searchOrderNumber" class="control-label">Order Number</label>
+      <input type="text" class="form-control input-sm" id="searchOrderNumber" name="searchOrderNumber" placeholder="xxxxxxxx" data-ng-model="search.orderNumber">
+    </div>
+
+    <div class="col-sm-3">
+    <label for="searchMobileNumber" class="control-label">Mobile Number</label>
+      <input type="text" class="form-control input-sm" id="searchMobileNumber" id="searchMobileNumber" placeholder="9876543210" data-ng-model="search.mobileNumber">
+    </div>
+  </div>
+
+</form>
+<hr/>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-10">
+      <form class="form-horizontal" role="form" name="ordersFormForm">
+
+        <div class="form-group">
+
+          <div class="col-sm-3">
+          <label for="orderNumber" class="control-label">Order Number</label>
+            <input type="text" class="form-control input-sm" id="orderNumber" name="orderNumber" placeholder="xxxxxxxx" data-ng-model="order.orderNumber" disabled />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="orderDate" class="control-label">Order Date</label>
+            <input type="date" class="form-control input-sm" id="orderDate" id="orderDate" data-ng-model="order.orderDate" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="orderStatus" class="control-label">Order Status</label>
+            <input type="text" class="form-control input-sm" id="orderStatus" id="orderStatus" data-ng-model="order.orderStatus" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="orderTotal" class="control-label">Order Total</label>
+            <input type="text" class="form-control input-sm" id="orderTotal" id="orderTotal" data-ng-model="order.orderTotal" disabled="" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="orderType" class="control-label">Order Type</label>
+            <input type="text" class="form-control input-sm" id="orderType" name="orderType" data-ng-model="order.orderType" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="mobileNumber" class="control-label">Mobile Number</label>
+            <input type="text" class="form-control input-sm" id="mobileNumber" id="mobileNumber" data-ng-model="order.mobileNumber" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="cashCustomerRef" class="control-label">Cash Customer Ref</label>
+            <input type="text" class="form-control input-sm" id="cashCustomerRef" id="cashCustomerRef" data-ng-model="order.cashCustomerRef" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="discountTotal" class="control-label">Discount Total</label>
+            <input type="text" class="form-control input-sm" id="discountTotal" id="discountTotal" data-ng-model="order.discountTotal" disabled />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="customerName" class="control-label">Customer Name</label>
+            <input type="text" class="form-control input-sm" id="customerName" name="customerName" data-ng-model="order.customerName" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="address" class="control-label">Address</label>
+            <input type="text" class="form-control input-sm" id="address" id="address" data-ng-model="order.address" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="salesRep" class="control-label">Sales Rep</label>
+            <input type="text" class="form-control input-sm" id="salesRep" id="salesRep" data-ng-model="order.salesRep" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="tax" class="control-label">Tax</label>
+            <input type="text" class="form-control input-sm" id="tax" id="tax" data-ng-model="order.tax" disabled />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="billingCounter" class="control-label">Billing Counter</label>
+            <input type="text" class="form-control input-sm" id="billingCounter" id="billingCounter" data-ng-model="order.billingCounter" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="redeemablePoints" class="control-label">Redeemable Points</label>
+            <input type="text" class="form-control input-sm" id="redeemablePoints" id="redeemablePoints" data-ng-model="order.redeemablePoints" />
+          </div>
+
+          <div class="col-sm-3">
+          <label for="onCreditHold" class="control-label">On Credit Hold</label>
+            <input type="checkbox" class="checkbox" id="onCreditHold" id="onCreditHold" data-ng-model="order.onCreditHold" />
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="col-lg-2">
+      <div class="form-group">
+        <div class="col-xs-2 col-lg-6">
+          <button class="btn btn-default btn-sm btn-block" type="submit">Next</button>
+        </div>
+          <div class="col-xs-2 col-lg-6">
+            <button class="btn btn-default btn-sm btn-block" type="submit">Save</button>
+          </div>
+          <div class="col-xs-2 col-lg-6">
+            <button class="btn btn-default btn-sm btn-block" type="submit">Refresh</button>
+          </div>
+          <div class="col-xs-2 col-lg-6">
+            <button class="btn btn-default btn-sm btn-block" type="submit">Discount</button>
+          </div>
+          <div class="col-xs-2 col-lg-6">
+            <button class="btn btn-default btn-sm btn-block" type="submit">Redeem Points</button>
+          </div>
+          <div class="col-xs-2 col-lg-6">
+            <button class="btn btn-default btn-sm btn-block" type="submit">Delete Order</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr/>
+<form role="form" name="currentOrderForm">
+  <table class="table table-condensed" >
+    <thead>
+      <tr>
+        <th width="8%">SKU Code</th>
+        <th>Description</th>
+        <th width="8%">UOM</th>
+        <th width="8%">Quantity</th>
+        <th width="8%">Price</th>
+        <th width="8%">Discount</th>
+        <th width="8%">Tax</th>
+        <th width="8%">Update</th>
+        <th width="8%">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="text" class="form-control input-sm" id="currentSkuCode" name="currentSkuCode" placeholder="xxxxx" data-ng-model="current.skuCode" />
+        </td>
+        <td>
+          <input type="text" class="form-control input-sm" id="currentDesc" name="currentDesc" placeholder="xxxxx" data-ng-model="current.desc" />
+        </td>
+        <td>
+          <input type="text" class="form-control input-sm" id="currentUom" name="currentUom" placeholder="xxxxx" data-ng-model="current.uom" />
+        </td>
+        <td>
+          <input type="text" class="form-control input-sm" id="currentQuantity" name="currentQuantity" placeholder="xxxxx" data-ng-model="current.quantity" />
+        </td>
+        <td colspan="5">
+          <input type="submit" class="btn btn-default btn-sm" />
+        </td>
+      </tr>
+      <tr data-ng-repeat="currentOrderItem in currentOrder">
+        <td>{{currentOrderItem.skuCode}}</td >
+        <td>{{currentOrderItem.desc}}</td>
+        <td>{{currentOrderItem.uom}}</td>
+        <td>{{currentOrderItem.quantity}}</td>
+        <td>{{currentOrderItem.price}}</td>
+        <td>{{currentOrderItem.discount}}</td>
+        <td>{{currentOrderItem.tax}}</td>
+        <td>{{currentOrderItem.update}}</td>
+        <td>{{currentOrderItem.delete}}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<link type="text/css" rel="stylesheet" href="pos-orders/css/index.min.css">

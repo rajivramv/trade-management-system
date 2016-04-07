@@ -1,0 +1,6 @@
+form[name="currentOrderForm"] table {
+  table-layout: fixed; }
+  form[name="currentOrderForm"] table thead th {
+    text-align: center; }
+  form[name="currentOrderForm"] table tbody td {
+    text-align: center; }

@@ -1,0 +1,53 @@
+{
+  "name": "b247-trade-management-system-demo",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rajivramv@bitbucket.org/b247/b247-trade-management-system-demo.git"
+  },
+  "keywords": [
+    "b247",
+    "trade",
+    "management",
+    "system"
+  ],
+  "author": "Rajiv Ram V <rajivram.v@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/b247/b247-trade-management-system-demo#readme",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "del": "^2.2.0",
+    "event-stream": "^3.3.2",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.0.1",
+    "gulp-filter": "^3.0.1",
+    "gulp-inject": "^1.2.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-ng-annotate": "^0.5.3",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev-all": "^0.8.18",
+    "gulp-sass": "^2.0.0",
+    "gulp-serve": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.1.0",
+    "main-bower-files": "^2.11.1",
+    "mocha": "^2.3.3",
+    "run-sequence": "^1.1.5",
+    "through2": "^0.6.5"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

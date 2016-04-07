@@ -1,0 +1,52 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding-top: $header-height + 20px;
+  padding-bottom: $footer-height + 20px;
+}
+header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: $zindex-navbar-fixed;
+  border-width: 0 0 1px;
+  min-height: $header-height;
+  margin-bottom: $line-height-computed;
+  background-color: $brand-primary;
+  border-color: darken($brand-primary, 10%);
+  color: lighten($brand-primary, 70%);
+  border: 1px solid transparent;
+  @include clearfix;
+  p {
+    @include navbar-vertical-align($line-height-computed);
+    font-size: $font-size-large;
+  }
+  .header-icon {
+    padding-left: $header-height/2;
+    padding-right: $header-height/2;
+  }
+}
+footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: $zindex-navbar-fixed;
+  height: $footer-height;
+  width: 100%;
+  background-color: $brand-primary;
+  color: lighten($brand-primary, 70%);
+  p {
+    margin: 0px;
+    font-size: $font-size-small;
+  }
+}

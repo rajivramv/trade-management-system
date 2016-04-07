@@ -1,0 +1,30 @@
+<div class="containter-fluid">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h3>Company Login</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <form class="form-horizontal" name="clientLogin" data-ng-submit="authenticateClient()">
+        <div class="form-group">
+          <label for="clientId" class="col-xs-2 control-label">Company </label>
+          <div class="col-xs-10">
+            <input type="text" class="form-control" id="clientId" name="clientId" data-ng-model="clientId" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="clientPass" class="col-xs-2 control-label">Password </label>
+          <div class="col-xs-10">
+            <input type="password" class="form-control" id="clientPass" name="clientPass" data-ng-model="clientPass" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-offset-10 col-xs-2">
+            <input type="submit" class="btn btn-default"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="containter-fluid" data-ng-init="roles=['Administrator','Sales']; forms={sales:['POS-orders']}; roles.formsForSelectedRole=[]">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-1">
+      <p>Roles</p>
+      <ul>
+        <li data-ng-repeat="role in roles">
+          <a href data-ng-click="roles.formsForSelectedRole = forms[role.toLowerCase()]">
+            {{role}}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-4 col-xs-offset-1">
+      <p>Forms</p>
+      <ul>
+        <li data-ng-repeat="form in roles.formsForSelectedRole">
+          <a href data-ng-click="openForm(form)">
+            {{form}}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-1 col-xs-offset-1">
+      <button class="btn btn-default" data-ng-click=logout()>Logout</button>
+    </div>
+  </div>
+</div>

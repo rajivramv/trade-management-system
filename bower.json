@@ -1,0 +1,31 @@
+{
+  "name": "b247-trade-management-system-demo",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Rajiv Ram V <rajivram.v@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "b247",
+    "trade",
+    "management",
+    "system"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "scriptjs": "^2.5.8",
+    "bootstrap-sass": "^3.3.6"
+  }
+}
