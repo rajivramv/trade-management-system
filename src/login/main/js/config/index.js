@@ -1,10 +1,13 @@
 // Defining the root state
 angular.module('main')
-.config(['$controllerProvider', '$stateProvider', '$urlRouterProvider', function($controllerProvider, $stateProvider, $urlRouterProvider){
+.config(['$controllerProvider', '$provide', '$stateProvider', '$urlRouterProvider', function($controllerProvider, $provide, $stateProvider, $urlRouterProvider){
 
-  angular.module('main').controllerProvider = $controllerProvider;
+  angular.module('main').lazy = {
+    controller: $controllerProvider.register,
+    service: $provide.service
+  };
 
-  $urlRouterProvider.otherwise('/home/company');
+  $urlRouterProvider.otherwise('/home/client');
 
   $stateProvider
   .state('root', {
@@ -17,7 +20,7 @@ angular.module('main')
     }
   })
   .state('root.client', {
-    url:'/company',
+    url:'/client',
     resolve: {
       dependencies: ['$q', '$stateParams', '$rootScope', _getDependencies('client/js/index.min.js')]
     },

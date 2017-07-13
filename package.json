@@ -1,25 +1,31 @@
 {
-  "name": "b247-trade-management-system-demo",
-  "version": "0.1.0",
+  "name": "trade-management-system",
+  "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "6.x"
+  },
   "scripts": {
+    "postinstall": "node_modules/.bin/bower install && node_modules/.bin/gulp build-dist",
     "start": "node server.js",
-    "test": "npm test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node_modules/.bin/gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://rajivramv@bitbucket.org/b247/b247-trade-management-system-demo.git"
+    "url": "git+https://git@github.com:rajivramv/trade-management-system.git"
   },
   "keywords": [
-    "b247",
     "trade",
     "management",
-    "system"
+    "system",
+    "poc", 
+    "saas"
   ],
   "author": "Rajiv Ram V <rajivram.v@gmail.com>",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/b247/b247-trade-management-system-demo#readme",
+  "license": "MIT",
+  "homepage": "https://github.com/rajivramv/trade-management-system",
   "devDependencies": {
     "bower": "^1.4.1",
     "del": "^2.2.0",

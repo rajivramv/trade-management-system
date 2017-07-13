@@ -4,7 +4,7 @@ angular.module('main')
   try {
     auth = JSON.parse(localStorage.getItem('auth'));
   } catch(err) {
-    // do nothing
+    // do nothing for now
   } finally {
     if(!auth){
       _initAuth();
@@ -25,7 +25,7 @@ angular.module('main')
     return auth.userAuthenticated;
   }
   this.authenticateClient = function(credentials){
-    return $http.post('http://localhost:8001/b247/v1/clients/login', credentials)
+    return $http.post('/api/v1/clients/login', credentials)
       .then(function(response){
         auth.clientAuthenticated = true;
         auth.client = response.data;
@@ -33,7 +33,8 @@ angular.module('main')
       });
   }
   this.authenticateUser = function(credentials){
-    return $http.post('http://localhost:8001/b247/v1/clients/' + auth.client.client_id + '/login', credentials)
+    var reqConfig = {headers: {Authorization: auth.client.clientAuth}}
+    return $http.post('/api/v1/clients/' + auth.client.clientId + '/login', credentials, reqConfig)
       .then(function(response){
         auth.userAuthenticated = true;
         auth.user = response.data;

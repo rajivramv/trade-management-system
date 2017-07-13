@@ -1,18 +1,19 @@
 // Defining the root state
-angular.module('main')
-.config(['$controllerProvider', '$stateProvider', '$urlRouterProvider', function($controllerProvider, $stateProvider, $urlRouterProvider){
-
-  angular.module('main').controllerProvider = $controllerProvider;
-
-  $urlRouterProvider.otherwise('/');
+angular.module('forms')
+.config(['$controllerProvider', '$provide', '$stateProvider', '$urlRouterProvider', function($controllerProvider, $provide, $stateProvider, $urlRouterProvider){
+  angular.module('forms').lazy = {
+    controller: $controllerProvider.register,
+    service: $provide.service
+  };
+  
+  $urlRouterProvider.otherwise('/form');
 
   $stateProvider
-  .state('root',{
-    url:'/',
+  .state('root', {
+    url: '/form',
     views: {
       'body': {
-        templateUrl: 'partials/body.html',
-        controller: 'fooController'
+        templateUrl: 'partials/body.html'
       },
       'header@root': {
         templateUrl: 'partials/header.html'
@@ -26,40 +27,34 @@ angular.module('main')
     }
   })
   .state('root.form',{
-    url:'?form',
+    url:'/:form',
     resolve: {
       dependencies: ['$q', '$stateParams', '$rootScope', _getDependencies]
     },
     views: {
       'header@root': {
-        templateUrl: _getHTMLFragment('header')
+        templateUrl: _getHTMLTemplate('header')
       },
       'section@root': {
-        templateUrl: _getHTMLFragment('section'),
+        templateUrl: _getHTMLTemplate('section'),
         controllerProvider: ['$stateParams', _getController('section')]
       }
     }
   })
 }])
-.controller('fooController',['$state', function($state){
-  setTimeout(function(){
-    $state.go('root.form', {form: 'pos-orders'});
-  }, 100);
-}])
 
-function _getHTMLFragment(frag){
+function _getHTMLTemplate(view){
   return function($stateParams){
-      return $stateParams.form + '/partials/' + frag +'.html';
+      return $stateParams.form + '/partials/' + view +'.html';
     }
 }
 
-function _getController(frag){
+function _getController(view){
   return function($stateParams){
-      return $stateParams.form.split('-').join('') + frag[0].toUpperCase() + frag.slice(1) + 'Controller';
+      return $stateParams.form.split('-').join('') + view[0].toUpperCase() + view.slice(1) + 'Controller';
     }
 }
 
-// Gets a reference of $rootScope and $stateParams using function definition parsing
 function _getDependencies($q, $stateParams, $rootScope){
   var toLoad = [$stateParams.form + '/js/' + 'index.min.js'],
     deferred = $q.defer();

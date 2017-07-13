@@ -18,7 +18,7 @@ module.exports = function(gulp, plugins, src, dist){
       .pipe(plugins.angularFilesort())
       .pipe(plugins.ngAnnotate())
       .pipe(plugins.concat('index.js'))
-      // .pipe(plugins.uglify())
+      .pipe(plugins.uglify())
       .pipe(plugins.rename({
           dirname: folder.slice(srcBase.length + 1),
           suffix: '.min'

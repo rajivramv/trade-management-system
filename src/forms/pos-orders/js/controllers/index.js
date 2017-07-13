@@ -1,36 +1,20 @@
-angular.module('main').controllerProvider.register('posordersSectionController', ['$scope', function($scope){
-  $scope.currentOrder = [
-    {skuCode: 12345, desc: 'Drinking Chocolate', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 54234, desc: 'Coca Cola 1 litre bottle', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Maggi Noodles', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0},
-    {skuCode: 63434, desc: 'Dettol', uom: 'ea', quantity: 1, price: 130, discount:1, tax:0}
-  ]
+angular.module('forms')
+.lazy.controller('posordersSectionController', ['$scope', 'orders', function($scope, orders){
+  $scope.search = {orderNumber: 0};
+
+  $scope.getOrder = getOrder;
+  getOrder(); 
+
+  function getOrder(){
+    if ($scope.order && ($scope.order.orderNumber === $scope.search.orderNumber)) {
+      return
+    }
+    orders.getItems($scope.search.orderNumber).then(function(res){
+      $scope.currentOrder = res.data;
+      $scope.order = Object.assign({}, $scope.order, {orderNumber: $scope.search.orderNumber});
+    }).catch(function(){
+      $scope.currentOrder = [];
+    })
+  }
+
 }]);

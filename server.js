@@ -1,26 +1,10 @@
-var express = require('express'),
-  app = express();
+const app = require('express')();
+const file = require('./routes/file');
+const data = require('./routes/data');
+const PORT = process.env.PORT || 8000
+app.use(file);
+app.use(data);
 
-app.use(function(req, res,next){
-  console.log(req.method, req.path);
-  next();
-});
-
-app.use('/forms/:form/', function(req, res, next){
-  express.static(__dirname + '/www/forms/' + req.params.form)(req, res, next);
-});
-
-app.use('/forms', express.static(__dirname + '/www/forms/main'));
-
-app.use('/:type/',  function(req, res, next){
-  express.static(__dirname + '/www/login/' + req.params.type)(req, res, next);
-});
-
-app.use('/', express.static(__dirname + '/www/login/main'));
-
-app.use('/vendors', express.static(__dirname + '/www/vendors'));
-
-
-app.listen(8000, function(){
-  console.log('Listening on port 8000');
+app.listen(PORT, function(){
+  console.log(`Open http://localhost:${PORT} in your browser`);
 });

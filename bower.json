@@ -23,8 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.5.0",
-    "angular-ui-router": "^0.2.18",
+    "angular": "1.5.5",
+    "angular-ui-router": "0.2.18",
     "scriptjs": "^2.5.8",
     "bootstrap-sass": "^3.3.6"
   }
